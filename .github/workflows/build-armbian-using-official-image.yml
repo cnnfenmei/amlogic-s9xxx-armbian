@@ -231,10 +231,10 @@ on:
       armbian_edition:
         description: "Select image edition type."
         required: false
-        default: "server"
+        default: "minimal"
         type: choice
         options:
-          - server
+          - minimal
           - desktop
           - beta
       builder_name:
@@ -311,7 +311,7 @@ jobs:
           echo "Verifying the symbolic link..."
           ls -ld /home/runner/actions-runner/cached
           df -Th /home/runner/actions-runner/cached
-          echo "Server disk layout:"
+          echo "minimal disk layout:"
           df -Th
           echo "status=success" >> ${GITHUB_OUTPUT}
 
